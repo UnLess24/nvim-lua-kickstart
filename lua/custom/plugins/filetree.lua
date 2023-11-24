@@ -10,7 +10,16 @@ return {
 		"MunifTanjim/nui.nvim",
 	},
 	config = function()
-		require('neo-tree').setup {}
+		require('neo-tree').setup {
+			event_handlers = {
+				{
+					event = "file_opened",
+					handler = function(_)
+						require('neo-tree.command').execute { action = 'close' }
+					end,
+				}
+			}
+		}
 	end,
 	vim.api.nvim_set_keymap('', '<leader>nt', "<cmd>Neotree<CR>", { desc = 'Open [Neo][T]ree' }),
 }
