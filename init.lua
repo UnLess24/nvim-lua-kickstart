@@ -255,8 +255,8 @@ vim.o.hlsearch = true
 vim.wo.number = true
 vim.wo.relativenumber = true
 
--- Enable mouse mode
-vim.o.mouse = 'a'
+-- Enable/Disable mouse mode
+vim.o.mouse = '' -- 'a'
 
 -- Cursor always at the middle of the screen
 vim.o.scrolloff = 999

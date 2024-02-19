@@ -62,7 +62,7 @@ return {
         dap.adapters.php = {
             type = 'executable',
             command = 'node',
-            args = { homePath .. '/.local/share/nvim/vscode-php-debug/out/phpDebug.js' }
+            args = { homePath .. '/debug/vscode-php-debug/out/phpDebug.js' }
         }
         dap.configurations.php = {
             {
@@ -81,7 +81,7 @@ return {
         dap.adapters.go = {
             type = 'executable',
             command = 'node',
-            args = { homePath .. '/vscode-go/dist/debugAdapter.js' },
+            args = { homePath .. '/debug/vscode-go/extension/dist/debugAdapter.js' },
         }
         dap.configurations.go = {
             {

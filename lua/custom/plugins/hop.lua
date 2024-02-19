@@ -2,7 +2,10 @@ return {
 	{
 		'phaazon/hop.nvim',
 		branch = 'v2', -- optional but strongly recommended
-		require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+		config = function()
+			-- you can configure Hop the way you like here; see :h hop-config
+			require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+		end
 	},
 	vim.api.nvim_set_keymap('', 'f',
 		"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>",
