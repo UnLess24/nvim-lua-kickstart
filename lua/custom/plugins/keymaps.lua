@@ -21,7 +21,16 @@ return {
 	vim.api.nvim_set_keymap('', '<C-Right>', '<C-w><', { desc = 'Decrease window width', noremap = true }),
 
 	-- Set terminal keys
-	vim.api.nvim_set_keymap('n', '<leader><leader>t', '<cmd>ToggleTerm 1<CR>',
+	vim.api.nvim_set_keymap('n', '<leader>ter', '<cmd>ToggleTerm 1<CR>',
 		{ desc = 'Enter to Terminal 1 normal mode', noremap = true }),
 	vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-N>', { desc = 'Terminal normal mode', noremap = true }),
+
+	-- Set LSP keys
+	vim.api.nvim_set_keymap('n', '<leader>lr', '<cmd>LspRestart<CR>', { desc = '[L]SP [R]estart', noremap = true }),
+
+	-- Set AI keys
+	vim.api.nvim_set_keymap('n', '<leader>ce', '<cmd>CodeiumEnable<CR>',
+		{ desc = '[C]odeium [E]nable', noremap = true }),
+	vim.api.nvim_set_keymap('n', '<leader>cd', '<cmd>CodeiumDisable<CR>',
+		{ desc = '[C]odeium [D]isable', noremap = true }),
 }
