@@ -18,6 +18,7 @@ return {
 			PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
 			NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
 			TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
+			DONE = { icon = " ", color = "#32de84" },
 		},
 	}
 }
