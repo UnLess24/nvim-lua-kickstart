@@ -54,6 +54,7 @@ return {
         vim.keymap.set('n', '<leader>B', function()
             dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
         end, { desc = 'Debug: Set Breakpoint' })
+        vim.keymap.set('n', '<F4>', dapui.eval, { desc = 'Debug: Eval variable' })
 
         -- Setup debug adapter and configurations
         -- https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#php
