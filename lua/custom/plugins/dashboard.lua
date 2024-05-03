@@ -21,6 +21,14 @@ return {
 						action = 'Telescope find_files',
 						key = 'f',
 					},
+					{
+						icon = ' ',
+						icon_hl = '@variable',
+						desc = 'Git Changed Files',
+						group = 'Label',
+						action = 'Telescope git_status',
+						key = 'g',
+					},
 					{ icon = '', desc = 'Quit', action = 'q', key = 'q' },
 				},
 			},
@@ -31,4 +39,3 @@ return {
 		{ 'MaximilianLloyd/ascii.nvim' }
 	}
 }
-
