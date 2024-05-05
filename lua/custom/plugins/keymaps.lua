@@ -33,4 +33,10 @@ return {
 		{ desc = '[C]odeium [E]nable', noremap = true }),
 	vim.api.nvim_set_keymap('n', '<leader>cd', '<cmd>CodeiumDisable<CR>',
 		{ desc = '[C]odeium [D]isable', noremap = true }),
+
+	-- Set keymaps for Telescope quickfix
+	vim.api.nvim_set_keymap('n', '<leader>tq', '<cmd>Telescope quickfix<CR>',
+		{ desc = '[T]elescope [Q]uickfix', noremap = true }),
+	vim.api.nvim_set_keymap('n', '<leader>tqh', '<cmd>Telescope quickfixhistory<CR>',
+		{ desc = '[T]elescope [Q]uickfix [H]istory', noremap = true }),
 }
