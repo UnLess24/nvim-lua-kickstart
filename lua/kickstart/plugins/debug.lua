@@ -47,20 +47,20 @@ return {
 
         -- Basic debugging keymaps, feel free to change to your liking!
         --
-        vim.keymap.set('n', '<F1>', dap.step_into, { desc = 'Debug: Step Into' })
-        vim.keymap.set('n', '<F2>', dap.step_over, { desc = 'Debug: Step Over' })
-        vim.keymap.set('n', '<F3>', dap.step_out, { desc = 'Debug: Step Out' })
-        vim.keymap.set('n', '<F4>', dap.run_to_cursor, { desc = 'Debug: Run to cursor' })
+        vim.keymap.set('n', '<leader>gi', dap.step_into, { desc = 'Debug: Step Into' })
+        vim.keymap.set('n', '<leader>go', dap.step_over, { desc = 'Debug: Step Over' })
+        vim.keymap.set('n', '<leader>gu', dap.step_out, { desc = 'Debug: Step Out' })
+        vim.keymap.set('n', '<leader>gc', dap.run_to_cursor, { desc = 'Debug: Run to cursor' })
 
-        vim.keymap.set('n', '<F5>', dapui.eval, { desc = 'Debug: Eval variable' })
+        vim.keymap.set('n', '<leader>ge', dapui.eval, { desc = 'Debug: Eval variable' })
 
         -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
         vim.keymap.set('n', '<F8>', dapui.toggle, { desc = 'Debug: See last session result.' })
         vim.keymap.set('n', '<F9>', dap.continue, { desc = 'Debug: Start/Continue' })
         vim.keymap.set('n', '<F10>', dap.terminate, { desc = 'Debug: Stop' })
 
-        vim.keymap.set('n', '<leader>b', dap.toggle_breakpoint, { desc = 'Debug: Toggle Breakpoint' })
-        vim.keymap.set('n', '<leader>B', function()
+        vim.keymap.set('n', '<leader>gb', dap.toggle_breakpoint, { desc = 'Debug: Toggle Breakpoint' })
+        vim.keymap.set('n', '<leader>gB', function()
             dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
         end, { desc = 'Debug: Set Breakpoint' })
 
@@ -159,26 +159,26 @@ return {
             layouts = { {
                 elements = { {
                     id = "scopes",
-                    size = 0.65
+                    size = 0.45
                 }, {
                     id = "breakpoints",
-                    size = 0.1
+                    size = 0.05
                 }, {
                     id = "stacks",
-                    size = 0.2
+                    size = 0.05
                 }, {
                     id = "watches",
-                    size = 0.05
+                    size = 0.45
                 } },
                 position = "left",
                 size = 60
             }, {
                 elements = { {
                     id = "repl",
-                    size = 0.5
-                }, {
-                    id = "console",
-                    size = 0.5
+                    size = 1
+                    -- }, {
+                    --     id = "console",
+                    --     size = 0.5
                 } },
                 position = "bottom",
                 size = 10
