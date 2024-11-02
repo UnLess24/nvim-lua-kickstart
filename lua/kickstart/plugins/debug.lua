@@ -162,16 +162,16 @@ return {
                     size = 0.45
                 }, {
                     id = "breakpoints",
-                    size = 0.05
+                    size = 0.2
                 }, {
-                    id = "stacks",
-                    size = 0.05
-                }, {
+                    --     id = "stacks",
+                    --     size = 0.05
+                    -- }, {
                     id = "watches",
-                    size = 0.45
+                    size = 0.3
                 } },
                 position = "left",
-                size = 60
+                size = 50
             }, {
                 elements = { {
                     id = "repl",
@@ -181,7 +181,7 @@ return {
                     --     size = 0.5
                 } },
                 position = "bottom",
-                size = 10
+                size = 1
             } },
             mappings = {
                 edit = "e",
