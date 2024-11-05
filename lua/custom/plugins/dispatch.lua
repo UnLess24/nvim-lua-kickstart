@@ -4,7 +4,7 @@ return {
 		vim.keymap.set("n", "<leader>ta", function()
 			local cwf = vim.fn.expand "%:."
 			if string.find(cwf, ".go$") then
-				vim.cmd.Dispatch { "go test ./..." }
+				vim.cmd.Dispatch { "go test ./... -count=1" }
 			end
 		end, { desc = "run test for all packages" })
 
@@ -12,7 +12,7 @@ return {
 			local cwf = vim.fn.expand "%:."
 			if string.find(cwf, ".go$") then
 				vim.cmd.Dispatch {
-					"go test " .. vim.fn.expand "%:p:h",
+					"go test " .. vim.fn.expand "%:p:h" .. " -count=1",
 				}
 			end
 		end, { desc = "run test for a package" })
@@ -20,7 +20,7 @@ return {
 		vim.keymap.set("n", "<leader>tt", function()
 			local cwf = vim.fn.expand "%:."
 			if string.find(cwf, "_test%.go$") then
-				vim.cmd.Dispatch { "go test " .. cwf }
+				vim.cmd.Dispatch { "go test " .. cwf .. " -count=1" }
 			end
 		end, { desc = "run test for a file" })
 
@@ -49,7 +49,7 @@ return {
 					vim.notify "test function was not found"
 				elseif string.match(function_name, "^Test.+") then
 					vim.cmd.Dispatch {
-						"go test " .. cwf .. " -run " .. function_name,
+						"go test " .. cwf .. " -run " .. function_name .. " -count=1",
 					}
 				else
 					vim.notify "function is not a test"
