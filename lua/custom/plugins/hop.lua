@@ -19,5 +19,7 @@ return {
 	vim.api.nvim_set_keymap('', 'T',
 		"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<cr>",
 		{}),
-	vim.api.nvim_set_keymap('', '<C-;>', "<cmd>lua require'hop'.hint_char2()<cr>", {})
+	vim.api.nvim_set_keymap('', '<leader><leader>j', "<cmd>HopWordAC<cr>", {}),
+	vim.api.nvim_set_keymap('', '<leader><leader>k', "<cmd>HopWordBC<cr>", {}),
+	vim.api.nvim_set_keymap('', '<leader><leader>l', "<cmd>HopPattern<cr>", {}),
 }

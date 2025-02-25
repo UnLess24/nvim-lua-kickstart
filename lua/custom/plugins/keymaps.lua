@@ -1,6 +1,7 @@
 return {
 	-- Set jk to hit esc key
 	-- vim.api.nvim_set_keymap('i', 'jk', "<esc>", { desc = 'Alias to ESC key for edit', noremap = true }),
+	vim.api.nvim_set_keymap('i', '<C-H>', "<tab>", { desc = 'Alias to TAB key for edit', noremap = true }),
 
 	-- Ser=t increment/decrement keys
 	vim.api.nvim_set_keymap('', '+', "<C-a>", { desc = 'increment', noremap = true }),
@@ -9,7 +10,7 @@ return {
 	vim.api.nvim_set_keymap('n', "<C-a>", 'ggVG', { desc = 'Select all', noremap = true }),
 
 	-- Set cursor move between windows to arrow keys
-	vim.api.nvim_set_keymap('', '<Up>', '<C-w>k', { desc = 'Cursor to Up wondow', noremap = true }),
+	vim.api.nvim_set_keymap('', '<Up>', '<C-w>k', { desc = 'Cursor to Up window', noremap = true }),
 	vim.api.nvim_set_keymap('', '<Down>', '<C-w>j', { desc = 'Cursor to Dows window', noremap = true }),
 	vim.api.nvim_set_keymap('', '<Left>', '<C-w>h', { desc = 'Cursor to Left window', noremap = true }),
 	vim.api.nvim_set_keymap('', '<Right>', '<C-w>l', { desc = 'Cursor to Right window', noremap = true }),
@@ -17,8 +18,8 @@ return {
 	-- Set change windows size to countrol and arrow keys
 	vim.api.nvim_set_keymap('', '<leader><Up>', '<C-w>+', { desc = 'Increase window size', noremap = true }),
 	vim.api.nvim_set_keymap('', '<leader><Down>', '<C-w>-', { desc = 'Decrease window size', noremap = true }),
-	vim.api.nvim_set_keymap('', '<leader><Left>', '<C-w>>', { desc = 'Increase window width', noremap = true }),
-	vim.api.nvim_set_keymap('', '<leader><Right>', '<C-w><', { desc = 'Decrease window width', noremap = true }),
+	vim.api.nvim_set_keymap('', '<C-Left>', '<C-w>>', { desc = 'Increase window width', noremap = true }),
+	vim.api.nvim_set_keymap('', '<C-Right>', '<C-w><', { desc = 'Decrease window width', noremap = true }),
 
 	-- Set terminal keys
 	vim.api.nvim_set_keymap('n', '<leader>ter', '<cmd>ToggleTerm 1<CR>',
