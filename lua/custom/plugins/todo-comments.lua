@@ -2,7 +2,8 @@ return {
 	"folke/todo-comments.nvim",
 	dependencies = { "nvim-lua/plenary.nvim" },
 	opts = {
-		vim.keymap.set("n", "<leader>t", '<cmd>TodoTelescope keywords=YAK<cr>', { desc = "TODO list (Telescope)" }),
+		vim.keymap.set("n", "<leader>t", '<cmd>Trouble todo filter = {tag = {YAK}}<cr>',
+			{ desc = "TODO list (Telescope)" }),
 		-- keywords recognized as todo comments
 		keywords = {
 			FIX = {
