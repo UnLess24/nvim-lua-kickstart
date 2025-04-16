@@ -527,6 +527,16 @@ local on_attach = function(_, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 end
 
+-- Add LSP dianostic config
+vim.diagnostic.config {
+  virtual_text = true,
+  signs = true,
+  update_in_insert = true,
+  underline = true,
+  severity_sort = true,
+  float = true,
+}
+
 -- document existing key chains
 require('which-key').add {
   { '<leader>c', name = '[C]ode' },
