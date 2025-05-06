@@ -33,5 +33,15 @@ return {
 			"<cmd>Trouble qflist toggle<cr>",
 			desc = "Quickfix List (Trouble)",
 		},
+		{
+			"<leader>xc",
+			"<cmd>Trouble close<cr>",
+			desc = "Trouble close (Trouble)",
+		},
+		{
+			"<leader>xt",
+			"<cmd>Trouble todo filter = {tag = {YAK}}<cr>",
+			desc = "TODO list (Throuble filter=YAK)",
+		},
 	}
 }
