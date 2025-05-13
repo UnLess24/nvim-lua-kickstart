@@ -40,4 +40,9 @@ return {
 		{ desc = '[T]elescope [Q]uickfix', noremap = true }),
 	vim.api.nvim_set_keymap('n', '<leader>tqh', '<cmd>Telescope quickfixhistory<CR>',
 		{ desc = '[T]elescope [Q]uickfix [H]istory', noremap = true }),
+
+	-- Set keymaps for git merge
+	vim.api.nvim_set_keymap('n', '<leader>hm', "<cmd>Gvdiffsplit!<CR>", { desc = '[G]it [M]erge', noremap = true }),
+	vim.api.nvim_set_keymap('n', '<leader>hf', "<cmd>diffget //2<CR>", { desc = '[G]it [U]se left', noremap = true }),
+	vim.api.nvim_set_keymap('n', '<leader>hj', "<cmd>diffget //3<CR>", { desc = '[G]it [U]se right', noremap = true }),
 }
