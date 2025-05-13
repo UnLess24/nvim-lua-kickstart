@@ -42,7 +42,26 @@ return {
 		{ desc = '[T]elescope [Q]uickfix [H]istory', noremap = true }),
 
 	-- Set keymaps for git merge
-	vim.api.nvim_set_keymap('n', '<leader>hm', "<cmd>Gvdiffsplit!<CR>", { desc = '[G]it [M]erge', noremap = true }),
-	vim.api.nvim_set_keymap('n', '<leader>hf', "<cmd>diffget //2<CR>", { desc = '[G]it [U]se left', noremap = true }),
-	vim.api.nvim_set_keymap('n', '<leader>hj', "<cmd>diffget //3<CR>", { desc = '[G]it [U]se right', noremap = true }),
+	vim.api.nvim_set_keymap('n', '<leader>hmt', "<cmd>Gvdiffsplit!<CR>",
+		{ desc = '[G]it [M]erge [T]ool', noremap = true }),
+	vim.api.nvim_set_keymap('n', '<leader>hh', "",
+		{
+			desc = '[G]it merge use left',
+			noremap = true,
+			callback = function()
+				if vim.opt.diff:get() then
+					vim.cmd("diffget //2")
+				end
+			end,
+		}),
+	vim.api.nvim_set_keymap('n', '<leader>hl', "",
+		{
+			desc = '[G]it merge use right',
+			noremap = true,
+			callback = function()
+				if vim.opt.diff:get() then
+					vim.cmd("diffget //3")
+				end
+			end,
+		}),
 }
