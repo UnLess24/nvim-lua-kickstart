@@ -1,4 +1,7 @@
 return {
+	vim.api.nvim_set_keymap('', 'gd', "<C-]>", { desc = 'Godo definition', noremap = true }),
+	vim.api.nvim_set_keymap('', 'gD', "<C-w><C-]>", { desc = 'Godo definition in horisintal split', noremap = true }),
+
 	-- Set jk to hit esc key
 	-- vim.api.nvim_set_keymap('i', 'jk', "<esc>", { desc = 'Alias to ESC key for edit', noremap = true }),
 	vim.api.nvim_set_keymap('i', '<C-H>', "<tab>", { desc = 'Alias to TAB key for edit', noremap = true }),

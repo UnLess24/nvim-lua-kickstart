@@ -153,8 +153,18 @@ require('lazy').setup({
           { buffer = bufnr, desc = 'Stage git hunk' })
         vim.keymap.set('n', '<leader>hr', require('gitsigns').reset_hunk,
           { buffer = bufnr, desc = 'Reset git hunk' })
+        vim.keymap.set('n', '<leader>hR', require('gitsigns').reset_buffer,
+          { buffer = bufnr, desc = 'Reset git hunk' })
         vim.keymap.set('n', '<leader>hb', require('gitsigns').toggle_current_line_blame,
           { buffer = bufnr, desc = 'Toggle current line blame' })
+        vim.keymap.set('n', '<leader>hB', require('gitsigns').blame,
+          { buffer = bufnr, desc = 'Show blame' })
+        vim.keymap.set('n', '<leader>hS', require('gitsigns').select_hunk,
+          { buffer = bufnr, desc = 'Select git hunk' })
+        vim.keymap.set('n', '<leader>hq', require('gitsigns').setqflist,
+          { buffer = bufnr, desc = 'Set quickfix' })
+        vim.keymap.set('n', '<leader>hd', require('gitsigns').diffthis,
+          { buffer = bufnr, desc = 'Diff this' })
 
         -- don't override the built-in and fugitive keymaps
         local gs = package.loaded.gitsigns
@@ -585,6 +595,23 @@ local servers = {
 -- Setup neovim lua configuration
 require('neodev').setup()
 
+-- Configure a server via `vim.lsp.config()` or `{after/}lsp/lua_ls.lua`
+vim.lsp.config('lua_ls', {
+  settings = {
+    Lua = {
+      runtime = {
+        version = 'LuaJIT',
+      },
+      diagnostics = {
+        globals = {
+          'vim',
+          'require',
+        },
+      },
+    },
+  },
+})
+
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
@@ -594,17 +621,6 @@ local mason_lspconfig = require 'mason-lspconfig'
 
 mason_lspconfig.setup {
   ensure_installed = vim.tbl_keys(servers),
-}
-
-mason_lspconfig.setup_handlers {
-  function(server_name)
-    require('lspconfig')[server_name].setup {
-      capabilities = capabilities,
-      on_attach = on_attach,
-      settings = servers[server_name],
-      filetypes = (servers[server_name] or {}).filetypes,
-    }
-  end,
 }
 
 -- [[ Configure nvim-cmp ]]
