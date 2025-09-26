@@ -40,8 +40,8 @@ return {
 		},
 		{
 			"<leader>xt",
-			"<cmd>Trouble todo filter = {tag = {YAK}}<cr>",
-			desc = "TODO list (Throuble filter=YAK)",
+			"<cmd>Trouble todo filter = {tag = {YAK,DONE}}<cr>",
+			desc = "TODO list (Throuble filter=YAK,DONE)",
 		},
 	}
 }
