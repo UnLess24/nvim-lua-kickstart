@@ -4,13 +4,13 @@ return {
 
 	-- Set jk to hit esc key
 	-- vim.api.nvim_set_keymap('i', 'jk', "<esc>", { desc = 'Alias to ESC key for edit', noremap = true }),
-	vim.api.nvim_set_keymap('i', '<C-H>', "<tab>", { desc = 'Alias to TAB key for edit', noremap = true }),
+	-- vim.api.nvim_set_keymap('i', '<C-H>', "<tab>", { desc = 'Alias to TAB key for edit', noremap = true }),
 
-	-- Ser=t increment/decrement keys
-	vim.api.nvim_set_keymap('', '+', "<C-a>", { desc = 'increment', noremap = true }),
-	vim.api.nvim_set_keymap('', '-', "<C-x>", { desc = 'decrement', noremap = true }),
+	-- Set increment/decrement keys
+	-- vim.api.nvim_set_keymap('', '+', "<C-a>", { desc = 'increment', noremap = true }),
+	-- vim.api.nvim_set_keymap('', '-', "<C-x>", { desc = 'decrement', noremap = true }),
 
-	vim.api.nvim_set_keymap('n', "<C-a>", 'ggVG', { desc = 'Select all', noremap = true }),
+	-- vim.api.nvim_set_keymap('n', "<C-a>", 'ggVG', { desc = 'Select all', noremap = true }),
 
 	-- Set cursor move between windows to arrow keys
 	vim.api.nvim_set_keymap('', '<Up>', '<C-w>k', { desc = 'Cursor to Up window', noremap = true }),
@@ -25,9 +25,9 @@ return {
 	vim.api.nvim_set_keymap('', '<C-Right>', '<C-w><', { desc = 'Decrease window width', noremap = true }),
 
 	-- Set terminal keys
-	vim.api.nvim_set_keymap('n', '<leader>ter', '<cmd>ToggleTerm 1<CR>',
-		{ desc = 'Enter to Terminal 1 normal mode', noremap = true }),
-	vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-N>', { desc = 'Terminal normal mode', noremap = true }),
+	-- vim.api.nvim_set_keymap('n', '<leader>ter', '<cmd>ToggleTerm 1<CR>',
+	-- 	{ desc = 'Enter to Terminal 1 normal mode', noremap = true }),
+	-- vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-N>', { desc = 'Terminal normal mode', noremap = true }),
 
 	-- Set LSP keys
 	vim.api.nvim_set_keymap('n', '<leader>lr', '<cmd>LspRestart<CR>', { desc = '[L]SP [R]estart', noremap = true }),
