@@ -26,7 +26,7 @@ return {
 		{
 			"<leader>xL",
 			"<cmd>Trouble loclist toggle<cr>",
-			desc = "Location List (Trouble)",
+			desc = "Local List (Trouble)",
 		},
 		{
 			"<leader>xQ",
