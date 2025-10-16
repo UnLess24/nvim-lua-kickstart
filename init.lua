@@ -44,6 +44,18 @@ P.S. You can delete this when you're done too. It's your config now :)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- Set listchars
+vim.opt.listchars = {
+  -- space = ".",
+  tab = "» ",
+  trail = "·",
+  extends = "›",
+  precedes = "‹",
+  nbsp = "␣",
+  eol = "↲",
+}
+vim.opt.list = true
+
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
