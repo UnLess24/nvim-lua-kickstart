@@ -563,7 +563,7 @@ vim.diagnostic.config {
 
 -- document existing key chains
 require('which-key').add {
-  { '<leader>c', name = '[C]ode' },
+  { '<leader>c', name = '[C]ode|ium' },
   { '<leader>d', name = '[D]ocument' },
   { '<leader>g', name = '[G]it' },
   { '<leader>h', name = 'More git' },
@@ -571,7 +571,8 @@ require('which-key').add {
   { '<leader>s', name = '[S]earch' },
   { '<leader>w', name = '[W]orkspace' },
   { '<leader>n', name = '[N]eo' },
-  { '<leader>x', name = '[T]rouble' },
+  { '<leader>x', name = '[X]Trouble' },
+  { '<leader>t', name = '[T]elescope' },
 }
 
 -- mason-lspconfig requires that these setup functions are called in this order

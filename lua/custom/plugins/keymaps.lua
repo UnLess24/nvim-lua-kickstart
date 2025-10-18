@@ -1,18 +1,19 @@
 return {
-	vim.api.nvim_set_keymap('', 'gd', "<C-]>", { desc = 'Godo definition', noremap = true }),
-	vim.api.nvim_set_keymap('', 'gD', "<C-w><C-]>", { desc = 'Godo definition in horisintal split', noremap = true }),
+	vim.api.nvim_set_keymap('', 'gd', "<C-]>", { desc = '[G]oto [D]efinition', noremap = true }),
+	vim.api.nvim_set_keymap('', 'gD', "<C-w><C-]>", { desc = '[G]oto [D]eclaration', noremap = true }),
+
+	vim.api.nvim_set_keymap('', '<leader>ds', "<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>",
+		{ desc = '[D]ocument [S]ymbols', noremap = true }),
+	vim.api.nvim_set_keymap('', '<leader>ws', "<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<CR>",
+		{ desc = '[W]orkspace [S]ymbols', noremap = true }),
+
+	-- See `:help K` for why this keymap
+	vim.api.nvim_set_keymap('', 'K', "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = 'Hover Documentation', noremap = true }),
+	vim.api.nvim_set_keymap('', '<C-k>', "<cmd>lua vim.lsp.buf.signature_help()<CR>",
+		{ desc = 'Signature Documentation', noremap = true }),
 
 	-- Highlight current word
 	vim.api.nvim_set_keymap('', '<leader>*', "*N", { desc = 'Highlight current word', noremap = true }),
-	-- Set jk to hit esc key
-	-- vim.api.nvim_set_keymap('i', 'jk', "<esc>", { desc = 'Alias to ESC key for edit', noremap = true }),
-	-- vim.api.nvim_set_keymap('i', '<C-H>', "<tab>", { desc = 'Alias to TAB key for edit', noremap = true }),
-
-	-- Set increment/decrement keys
-	-- vim.api.nvim_set_keymap('', '+', "<C-a>", { desc = 'increment', noremap = true }),
-	-- vim.api.nvim_set_keymap('', '-', "<C-x>", { desc = 'decrement', noremap = true }),
-
-	-- vim.api.nvim_set_keymap('n', "<C-a>", 'ggVG', { desc = 'Select all', noremap = true }),
 
 	-- Set cursor move between windows to arrow keys
 	vim.api.nvim_set_keymap('', '<Up>', '<C-w>k', { desc = 'Cursor to Up window', noremap = true }),
@@ -25,11 +26,6 @@ return {
 	vim.api.nvim_set_keymap('', '<leader><Down>', '<C-w>-', { desc = 'Decrease window size', noremap = true }),
 	vim.api.nvim_set_keymap('', '<C-Left>', '<C-w>>', { desc = 'Increase window width', noremap = true }),
 	vim.api.nvim_set_keymap('', '<C-Right>', '<C-w><', { desc = 'Decrease window width', noremap = true }),
-
-	-- Set terminal keys
-	-- vim.api.nvim_set_keymap('n', '<leader>ter', '<cmd>ToggleTerm 1<CR>',
-	-- 	{ desc = 'Enter to Terminal 1 normal mode', noremap = true }),
-	-- vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-N>', { desc = 'Terminal normal mode', noremap = true }),
 
 	-- Set LSP keys
 	vim.api.nvim_set_keymap('n', '<leader>lr', '<cmd>LspRestart<CR>', { desc = '[L]SP [R]estart', noremap = true }),
