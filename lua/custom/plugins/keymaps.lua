@@ -15,6 +15,9 @@ return {
 	-- Highlight current word
 	vim.api.nvim_set_keymap('', '<leader>*', "*N", { desc = 'Highlight current word', noremap = true }),
 
+	-- FZF
+	vim.api.nvim_set_keymap('', '<leader>ff', "<cmd>FZF<CR>", { desc = '[F]ind [F]ile', noremap = true }),
+
 	-- Set cursor move between windows to arrow keys
 	vim.api.nvim_set_keymap('', '<Up>', '<C-w>k', { desc = 'Cursor to Up window', noremap = true }),
 	vim.api.nvim_set_keymap('', '<Down>', '<C-w>j', { desc = 'Cursor to Dows window', noremap = true }),

@@ -21,5 +21,11 @@ return {
 			}
 		}
 	end,
-	vim.api.nvim_set_keymap('', '<leader>nt', "<cmd>Neotree<CR>", { desc = 'Open [Neo][T]ree' }),
+	vim.api.nvim_set_keymap('', '<leader>nt', "<cmd>Neotree position=right<CR>", { desc = 'Open [Neo][T]ree' }),
+	vim.api.nvim_set_keymap('', '<leader>ns', "<cmd>Neotree float git_status<CR>",
+		{ desc = 'Open [NeoTree] Git[s]tatus' }),
+	vim.api.nvim_set_keymap('', '<leader>nf', "<cmd>Neotree float<CR>",
+		{ desc = 'Open [NeoTree] [f]loat' }),
+	vim.api.nvim_set_keymap('', '<leader>nb', "<cmd>Neotree float buffers<CR>",
+		{ desc = 'Open [NeoTree] float [b]uffers]' }),
 }
