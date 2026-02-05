@@ -63,6 +63,13 @@ vim.opt.listchars = {
 }
 vim.opt.list = true
 
+-- Set phpstan
+vim.g.phpstan_executable = 'phpstan'
+
+-- Options for cursorline
+vim.opt.cursorline = true
+vim.opt.cursorcolumn = true
+
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'

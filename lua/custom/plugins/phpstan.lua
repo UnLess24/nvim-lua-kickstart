@@ -1,0 +1,3 @@
+return {
+	'phpstan/vim-phpstan'
+}
