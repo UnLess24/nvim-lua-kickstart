@@ -1,3 +1,0 @@
-return {
-	'phpstan/vim-phpstan'
-}

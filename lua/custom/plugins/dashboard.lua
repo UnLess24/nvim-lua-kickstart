@@ -5,37 +5,62 @@ return {
 		local db = require('dashboard')
 		-- local ascii = require("ascii")
 		db.setup({
-			theme = 'hyper',
+			theme = 'doom',
 			config = {
-				-- header = ascii.get_random_global(),
-				week_header = {
-					enable = true,
-				},
-				shortcut = {
-					{ desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
+				-- header = { "test " }, --your header
+				center = {
 					{
-						icon = ' ',
-						icon_hl = '@variable',
-						desc = 'Files',
-						group = 'Label',
-						action = 'Telescope find_files',
-						key = 'f',
+						icon = ' ',
+						icon_hl = 'Title',
+						desc = 'Find File',
+						desc_hl = 'String',
+						key = 'ff',
+						keymap = '<leader>ff',
+						key_hl = 'Number',
+						-- key_format = ' %s', -- remove default surrounding `[]`
+						action = 'FzfLua files'
 					},
 					{
-						icon = ' ',
-						icon_hl = '@variable',
-						desc = 'Git Changed Files',
-						group = 'Label',
-						action = 'Telescope git_status',
-						key = 'g',
+						icon = ' ',
+						icon_hl = 'Title',
+						desc = 'NeoTree (float)',
+						desc_hl = 'String',
+						key = 'nf',
+						keymap = '<leader>nf',
+						key_hl = 'Number',
+						-- key_format = ' %s', -- remove default surrounding `[]`
+						action = 'Neotree float'
 					},
-					{ icon = '', desc = 'Quit', action = 'q', key = 'q' },
+					{
+						icon = ' ',
+						icon_hl = 'Title',
+						desc = 'Git status',
+						desc_hl = 'String',
+						key = 'gs',
+						keymap = '<leader>gs',
+						key_hl = 'Number',
+						-- key_format = ' %s', -- remove default surrounding `[]`
+						action = 'FzfLua git_status'
+					},
+					{
+						icon = ' ',
+						icon_hl = 'Title',
+						desc = 'TODO',
+						desc_hl = 'String',
+						key = 'xt',
+						keymap = '<leader>xt',
+						key_hl = 'Number',
+						-- key_format = ' %s', -- remove default surrounding `[]`
+						action = 'Trouble todo filter = {tag = {YAK,DONE}}'
+					},
 				},
-			},
+				footer = {}, --your footer
+				vertical_center = true,
+			}
 		})
 	end,
 	dependencies = {
 		{ 'nvim-tree/nvim-web-devicons' },
-		{ 'MaximilianLloyd/ascii.nvim' }
+		-- { 'MaximilianLloyd/ascii.nvim' }
 	}
 }
