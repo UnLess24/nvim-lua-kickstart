@@ -65,12 +65,19 @@ vim.opt.listchars = {
 }
 vim.opt.list = true
 
--- Set phpstan
-vim.g.phpstan_executable = "phpstan"
-
 -- Options for cursorline
 vim.opt.cursorline = true
 vim.opt.guicursor = { "i:block" }
+
+-- Options for folding
+vim.opt.fillchars = {
+  eob = " ",
+  fold = " ",
+  foldopen = "",
+  foldsep = "│",
+  foldclose = "",
+}
+vim.opt.foldcolumn = '1'
 
 vim.o.winborder = "double"
 
